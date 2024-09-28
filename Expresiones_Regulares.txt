@@ -1,0 +1,40 @@
+1. Implemente una regex para validar un correo electrónico en general, a continuación, se muestran algunos ejemplos. 
+Guate.360-porelmundo@miguate.com
+Miercoles3@hotmail.com
+Progra3.galileo@galileo.edu
+
+Expresión Regular: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+
+2. implemente una regex para validar la dirección URL de una página web con los tipos de domino (.com, .org, .edu). Note que la URL incluye el protocolo (http o https) y los símbolos (//www.), a continuación, se muestran algunos ejemplos: 
+https://www.guate360-porelmundo.com
+http://www.a2.net
+https://www.galileo.edu
+http://www.8.org (No valida)
+
+Expresión Regular: '^(https?://)?(www\.)?[a-zA-Z0-9.-]+\.(com|org|edu|net)(/.*)?$'
+
+3. Implemente una regex para validar una MAC Address, notar que las mac addresses están 
+divididas en 6 bloques de caracteres hexadecimales, es decir que los símbolos solo pueden 
+variar del 0 al 9 y las letras de la A a la F. a continuación se muestran algunos ejemplos: 
+5A 6F AF 8C 9B 1D
+6D 6C 4D 3A EB 3F
+3A 7C FA C8 6D 4J (no valida por que el ultimo bloque contiene una J)
+
+Expresión Regular: '^([0-9A-Fa-f]{2}([ :.-]?)?){5}[0-9A-Fa-f]{2}$
+
+4. Implemente una regex para validar una dirección IPv4, notar que las direcciones IPv4 están divididas en 4 bloques de valores los cuales solo pueden ir desde 0 hasta 255, una IP donde algunos de sus bloques sean mayores a 255 no es válida, además tome en cuenta que cada bloque está separado por un punto. A continuación, se muestran algunos ejemplos: 
+192.16.8.1
+234.56.78.90
+1.2.3.4
+192.168.45.345 (no valida por que el ultimo bloque es mayor a 255)
+
+Expresión Regular: '^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+
+5. Implemente una regex para validar una fecha con la secuencia día - mes - año donde el día, mes y año puedan estar separados ya sea por el carácter / o el carácter - o el carácter., notar que las fechas son válidas si los si los días están definidos desde el 1 al 31, el mes del 1 al 12 y el año de 2000 al 2019. También debe tomar en cuenta que los días y meses pueden estar escritos ya sea con uno o dos caracteres, por ejemplo: Enero puede escribirse como 1 o como 01. Los años también pueden expresarse ya sea con dos o con cuatro caracteres por ejemplo: 19 o 2019 son validos. A continuación se muestran algunos ejemplos: 
+20/1/2019
+12.03.2005
+31-11-08
+1-1-2012
+12-12-22 (no valida, porque el año supera al 2019).
+
+Expresión Regular: '^(0?[1-9]|[12][0-9]|3[01])[\/\-.](0?[1-9]|1[0-2])[\/\-.](19|20)?[0-9]{2}$'
